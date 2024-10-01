@@ -14,20 +14,21 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
   return (
     <nav style={styles.nav}>
       <div style={styles.navContainer}>
-        <h2 style={styles.brand}>My Personal Site</h2>
+        <h2 style={styles.brand}>Alex Serdukov</h2>
         <ul style={styles.navList}>
           <li style={styles.navItem}><Link to="/" style={styles.navLink}>Home</Link></li>
-          <li style={styles.navItem}><Link to="/car-models" style={styles.navLink}>Latest Car Models</Link></li>
+          
           {isLoggedIn ? (
             <>
               <li style={styles.navItem}><Link to="/accomplishments" style={styles.navLink}>Accomplishments</Link></li>
               <li style={styles.navItem}><Link to="/favorite-photos" style={styles.navLink}>Favorite Photos</Link></li>
+              <li style={styles.navItem}><Link to="/car-models" style={styles.navLink}>Latest Car Models</Link></li>
               <li style={styles.navItem}>
                 <button style={styles.logoutButton} onClick={handleLogout}>Logout</button>
               </li>
             </>
           ) : (
-            <>
+            <>              
               <li style={styles.navItem}><Link to="/login" style={styles.navLink}>Login</Link></li>
               <li style={styles.navItem}><Link to="/register" style={styles.navLink}>Register</Link></li>
             </>
