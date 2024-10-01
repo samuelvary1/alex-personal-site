@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.photo-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.photo-item img {
+  max-width: 100%;
+  height: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

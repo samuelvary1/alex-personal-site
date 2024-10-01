@@ -1,9 +1,18 @@
+// src/components/Home.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div style={styles.container}>
+      {/* Central Image */}
+      <img
+        src="/images/Profile.png"  // Use the path relative to the public folder 
+        alt="Profile"       
+        style={styles.image} // Inline styling for the image
+      />
+      <p style={styles.imageSubtitle}>Alex Serdukov</p>
       <h1 style={styles.heading}>Welcome to My Personal Site</h1>
       <p style={styles.description}>
         This is a space where I showcase my personal and professional achievements, share my favorite photos, and provide information on the latest car models.
@@ -23,7 +32,7 @@ const Home = () => {
   );
 };
 
-// Define some basic inline styles for the Home component
+// Define styles for the Home component, including image styling
 const styles = {
   container: {
     display: 'flex',
@@ -33,10 +42,17 @@ const styles = {
     marginTop: '50px',
     padding: '20px',
   },
+  image: {
+    width: '200px',     // Set the image width
+    height: '200px',    // Set the image height
+    borderRadius: '50%', // Make the image circular
+    marginBottom: '20px', // Add some spacing below the image
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Add a shadow effect
+  },
   heading: {
     fontSize: '36px',
     marginBottom: '20px',
-    color: '#4CAF50', // Use your preferred color scheme here
+    color: '#4CAF50',
   },
   description: {
     fontSize: '18px',
@@ -52,7 +68,7 @@ const styles = {
     padding: '15px 30px',
     textDecoration: 'none',
     color: '#FFF',
-    backgroundColor: '#007BFF', // Use your preferred button color
+    backgroundColor: '#007BFF',
     borderRadius: '5px',
     fontSize: '16px',
     transition: 'background-color 0.3s ease',

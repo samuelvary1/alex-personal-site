@@ -1,9 +1,6 @@
 import React from 'react';
 
-const carModels = [
-  { name: '2024 Tesla Model S', description: 'Electric luxury sedan', image: 'path/to/tesla.jpg' },
-  { name: '2024 Ford Mustang', description: 'High-performance sports car', image: 'path/to/mustang.jpg' }
-];
+const carModels = [];
 
 const CarModels = () => {
   return (

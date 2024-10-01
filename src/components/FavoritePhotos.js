@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import UploadPhotoForm from './UploadPhotoForm';
 
 const FavoritePhotos = () => {
-  const photos = [
-    { src: 'path/to/photo1.jpg', description: 'Photo 1 description' },
-    { src: 'path/to/photo2.jpg', description: 'Photo 2 description' }
-  ];
+  const [photos, setPhotos] = useState([]);
+
+  const addPhoto = (newPhoto) => {
+    setPhotos([...photos, newPhoto]);
+  };
 
   return (
     <div>
@@ -17,6 +19,7 @@ const FavoritePhotos = () => {
           </div>
         ))}
       </div>
+      <UploadPhotoForm onAddPhoto={addPhoto} />
     </div>
   );
 };
