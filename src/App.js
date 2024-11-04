@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Accomplishments from './components/Accomplishments';
 import FavoritePhotos from './components/FavoritePhotos';
-import CarModels from './components/CarModels';
+import CarDetails from './components/CarDetails';
 import Login from './components/Login';
 import Register from './components/Register';
 import Navbar from './components/Navbar';
@@ -49,7 +49,7 @@ function App() {
         ) : (
           <Route path="/accomplishments" element={<Login onLogin={setIsLoggedIn} />} />
         )}
-        <Route path="/car-models" element={<CarModels />} />
+        <Route path="/car-models" element={<CarDetails />} />
       </Routes>
     </Router>
   );
