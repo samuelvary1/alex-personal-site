@@ -1,16 +1,9 @@
 // src/components/Navbar.js
 
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ isLoggedIn, onLogout }) => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    onLogout();
-    navigate('/');  // Redirect to the home page after logout
-  };
-
   return (
     <nav style={styles.nav}>
       <div style={styles.navContainer}>
@@ -24,7 +17,6 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
               <li style={styles.navItem}><Link to="/favorite-photos" style={styles.navLink}>Favorite Photos</Link></li>
               <li style={styles.navItem}><Link to="/car-models" style={styles.navLink}>Latest Car Models</Link></li>
               <li style={styles.navItem}>
-                <button style={styles.logoutButton} onClick={handleLogout}>Logout</button>
               </li>
             </>
           ) : (

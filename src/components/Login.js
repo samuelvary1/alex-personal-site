@@ -1,53 +1,35 @@
-// src/components/Login.js
-
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase-config';
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleBypassLogin = (e) => {
     e.preventDefault();
-    try {
-      // Sign in the user with email and password
-      await signInWithEmailAndPassword(auth, email, password);
-      onLogin(true); // Set the login state to true
-      navigate('/accomplishments'); // Redirect to the Accomplishments page after login
-    } catch (error) {
-      setError(error.message); // Display error message
-    }
+    onLogin(true); // Simulate login
+    navigate('/accomplishments'); // Redirect
   };
 
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleBypassLogin}>
         <div>
           <label>Email:</label>
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder="Enter any email"
           />
         </div>
         <div>
           <label>Password:</label>
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter your password"
+            placeholder="Enter any password"
           />
         </div>
         <button type="submit">Login</button>
       </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };
