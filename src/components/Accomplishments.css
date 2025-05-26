@@ -1,132 +1,149 @@
-/* Accomplishments Container */
+/* Full-page background container */
+.accomplishments-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../../public/images/blue_marble.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* <-- align content to the top */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Centered content container */
 .accomplishments-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Page Title */
-  .page-title {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #4CAF50;
-  }
-  
-  /* Accomplishments List */
-  .accomplishments-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  
-  /* Accomplishment Card */
-  .accomplishment-card {
-    position: relative; /* Ensure the card is the reference for absolute positioning */
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .accomplishment-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Icon Container */
-  .icon-container {
-    font-size: 36px;
-    color: #4CAF50;
-    margin-bottom: 10px;
-  }
-  
-  /* Accomplishment Description and Date */
-  .accomplishment-description {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  
-  .accomplishment-date {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 20px;
-  }
-  
-  /* Delete Icon Styling */
-  .delete-icon {
-    position: absolute; /* Position the delete icon in the lower-left corner */
-    bottom: 10px;
-    left: 10px;
-    font-size: 20px;
-    color: #ff6347;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .delete-icon:hover {
-    color: #ff4500;
-    transform: scale(1.2);
-  }
-  
-  /* Form Styling */
-  .accomplishment-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  /* Form Group */
-  .form-group {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  /* Icon Picker */
-  .icon-picker {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .icon {
-    font-size: 36px;
-    cursor: pointer;
-    color: #777; /* Default color for icons */
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  
-  .icon:hover {
-    color: #4CAF50; /* Hover color */
-  }
-  
-  /* Selected Icon Styling */
-  .icon.selected {
-    color: #4CAF50; /* Keep the selected icon green */
-    transform: scale(1.2); /* Enlarge selected icon */
-  }
-  
-  /* Submit Button */
-  .submit-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #45A049;
-    transform: translateY(-2px);
-  }
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Title */
+.page-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #4CAF50;
+}
+
+/* Accomplishments List */
+.accomplishments-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Accomplishment Card */
+.accomplishment-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accomplishment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Container */
+.icon-container {
+  font-size: 36px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+/* Accomplishment Description and Date */
+.accomplishment-description {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.accomplishment-date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Delete Icon Styling */
+.delete-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #ff6347;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: #ff4500;
+  transform: scale(1.2);
+}
+
+/* Form Styling */
+.accomplishment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Form Group */
+.form-group {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Icon Picker */
+.icon-picker {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 36px;
+  cursor: pointer;
+  color: #777;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover {
+  color: #4CAF50;
+}
+
+.icon.selected {
+  color: #4CAF50;
+  transform: scale(1.2);
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #45A049;
+  transform: translateY(-2px);
+}

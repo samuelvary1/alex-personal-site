@@ -1,0 +1,81 @@
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../../public/images/car_background.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.home-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 4px solid white;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.home-subtitle {
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.home-heading {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #00FFAA;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.home-description {
+  font-size: 20px;
+  max-width: 700px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.home-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.link-button {
+  padding: 12px 24px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007BFF;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Optional: Add entrance animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

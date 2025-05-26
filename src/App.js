@@ -6,10 +6,13 @@ import FavoritePhotos from './components/FavoritePhotos';
 import CarDetails from './components/CarDetails';
 import Login from './components/Login';
 import Register from './components/Register';
+import Navbar from './components/Navbar';
 
 function App() {
+
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login onLogin={() => {}} />} />

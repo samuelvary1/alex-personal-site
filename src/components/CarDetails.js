@@ -12,11 +12,13 @@ const CarDetails = () => {
       const response = await axios.get(
         'https://api.unsplash.com/photos/random',
         {
-          headers: { Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}` },
+          headers: {
+            Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}`
+          },
           params: { query: 'modern car' }
         }
       );
-      setCarImage(response.data.urls.regular); // Set the image URL from Unsplash
+      setCarImage(response.data.urls.regular);
     } catch (error) {
       console.error('Error fetching image:', error);
     }
@@ -28,19 +30,23 @@ const CarDetails = () => {
   }, []);
 
   return (
-    <div className="car-details-container">
-      <h1 className="page-title">Magical Car Portal</h1>
-      {loading && <p>Loading image...</p>}
-      <div className="car-details">
-        {carImage && <img src={carImage} alt="Random Car" className="car-image" />}
+    <div className="car-details-page">
+      <div className="car-details-container">
+        <h1 className="page-title">Magical Car Portal</h1>
+        {loading && <p>Loading image...</p>}
+        <div className="car-details">
+          {carImage && (
+            <img src={carImage} alt="Random Car" className="car-image" />
+          )}
+        </div>
+        <button
+          className="shuffle-button"
+          onClick={fetchRandomCarImage}
+          disabled={loading}
+        >
+          {loading ? 'Fetching...' : 'Get Another Car'}
+        </button>
       </div>
-      <button
-        className="shuffle-button"
-        onClick={fetchRandomCarImage}
-        disabled={loading}
-      >
-        {loading ? 'Fetching...' : 'Get Another Car'}
-      </button>
     </div>
   );
 };

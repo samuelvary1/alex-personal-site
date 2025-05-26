@@ -1,19 +1,34 @@
-/* src/components/CarDetails.css */
-
-.car-details-container {
+/* Full-page blue marble background */
+.car-details-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../../public/images/blue_marble.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Full viewport height */
+  align-items: flex-start;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Content container */
+.car-details-container {
+  max-width: 900px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin-top: -60px;
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page-title {
   color: #333;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
 .car-details {
@@ -32,14 +47,18 @@
 }
 
 .shuffle-button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.shuffle-button:hover:not(:disabled) {
+  background-color: #0056b3;
 }
 
 .shuffle-button:disabled {

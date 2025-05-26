@@ -1,30 +1,16 @@
-// src/components/Navbar.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ isLoggedIn, onLogout }) => {
+const Navbar = () => {
   return (
     <nav style={styles.nav}>
       <div style={styles.navContainer}>
         <h2 style={styles.brand}>Alex Serdukov</h2>
         <ul style={styles.navList}>
           <li style={styles.navItem}><Link to="/" style={styles.navLink}>Home</Link></li>
-          
-          {isLoggedIn ? (
-            <>
-              <li style={styles.navItem}><Link to="/accomplishments" style={styles.navLink}>Accomplishments</Link></li>
-              <li style={styles.navItem}><Link to="/favorite-photos" style={styles.navLink}>Favorite Photos</Link></li>
-              <li style={styles.navItem}><Link to="/car-models" style={styles.navLink}>Latest Car Models</Link></li>
-              <li style={styles.navItem}>
-              </li>
-            </>
-          ) : (
-            <>              
-              <li style={styles.navItem}><Link to="/login" style={styles.navLink}>Login</Link></li>
-              <li style={styles.navItem}><Link to="/register" style={styles.navLink}>Register</Link></li>
-            </>
-          )}
+          <li style={styles.navItem}><Link to="/accomplishments" style={styles.navLink}>Accomplishments</Link></li>
+          <li style={styles.navItem}><Link to="/favorite-photos" style={styles.navLink}>Favorite Photos</Link></li>
+          <li style={styles.navItem}><Link to="/car-models" style={styles.navLink}>Latest Car Models</Link></li>
         </ul>
       </div>
     </nav>
@@ -34,9 +20,9 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
 // Define styles for the Navbar
 const styles = {
   nav: {
-    backgroundColor: '#333',  // Dark background for the navbar
+    backgroundColor: '#333',
     padding: '10px 0',
-    borderBottom: '2px solid #4CAF50', // Accent border
+    borderBottom: '2px solid #4CAF50',
   },
   navContainer: {
     maxWidth: '1200px',
@@ -68,20 +54,6 @@ const styles = {
     borderRadius: '4px',
     transition: 'background-color 0.3s ease',
   },
-  navLinkHover: {
-    backgroundColor: '#4CAF50',
-  },
-  logoutButton: {
-    backgroundColor: '#FF6347',
-    color: '#FFFFFF',
-    border: 'none',
-    padding: '8px 16px',
-    borderRadius: '4px',
-    cursor: 'pointer',
-    fontSize: '18px',
-    transition: 'background-color 0.3s ease',
-  },
 };
 
-// Export the Navbar component
 export default Navbar;
